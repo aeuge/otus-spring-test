@@ -4,12 +4,15 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="personDao" class="ru.otus.springTest.dao.PersonDaoSimple">
+    <bean id="personDao" class="ru.otus.springTest.dao.PersonDaoKeyboard">
         <property name="defaultAge" value="28"/>
     </bean>
 
     <bean id="personService" class="ru.otus.springTest.service.PersonServiceImpl">
         <property name="dao" ref="personDao"/>
+    </bean>
+
+    <bean id="loadTestService" class="ru.otus.springTest.service.LoadTestServiceImpl">
     </bean>
 
 </beans>

@@ -13,9 +13,6 @@ public class PersonServiceImpl implements PersonService {
 
     public PersonServiceImpl () {}
 
-    public PersonServiceImpl(PersonDao dao) {
-        this.dao = dao;
-    }
 
     public Person getByName(String name) {
         return dao.findByName(name);
