@@ -2,6 +2,7 @@ package ru.otus.springTest.service;
 
 import ru.otus.springTest.domain.Question;
 
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -17,12 +18,11 @@ public class LoadTestServiceImpl implements LoadTestService {
     public LoadTestServiceImpl() {
     }
 
-
     public Question getByPath(String path) {
-        Path pathTestFile = Paths.get(path);
+        URL url = ClassLoader.getSystemResource(path);
         List<String> lines = new ArrayList<>();
         try {
-           lines = Files.readAllLines(pathTestFile);
+           lines = Files.readAllLines(Paths.get(url.getFile()));
         } catch (Exception e) {
             e.printStackTrace();
         }

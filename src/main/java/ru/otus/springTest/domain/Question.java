@@ -1,6 +1,8 @@
 package ru.otus.springTest.domain;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Question{
@@ -12,5 +14,15 @@ public class Question{
 
     public void add (String k, String v) {
         mapOfQuestions.put(k,v);
+    }
+
+    public List<String> keys() {
+        return new ArrayList<>(mapOfQuestions.keySet());
+    }
+    public String get (String key) {
+        return mapOfQuestions.get(key);
+    }
+    public String toString () {
+        return mapOfQuestions.toString();
     }
 }

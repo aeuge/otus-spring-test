@@ -15,4 +15,7 @@
     <bean id="loadTestService" class="ru.otus.springTest.service.LoadTestServiceImpl">
     </bean>
 
+    <bean id="examService" class="ru.otus.springTest.service.ExamServiceImpl">
+    </bean>
+
 </beans>

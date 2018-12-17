@@ -13,7 +13,6 @@ public class PersonServiceImpl implements PersonService {
 
     public PersonServiceImpl () {}
 
-
     public Person getByName(String name) {
         return dao.findByName(name);
     }
