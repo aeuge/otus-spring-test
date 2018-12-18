@@ -1,12 +1,13 @@
 package ru.otus.springexam.service;
 
+import org.springframework.stereotype.Service;
 import ru.otus.springexam.domain.Question;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
+@Service
 public class ExamServiceImpl implements ExamService {
     public long start(Question question, int numberOfQuestions) {
         int numberOfCorrectAnswers = 0;

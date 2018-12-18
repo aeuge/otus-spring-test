@@ -1,10 +1,14 @@
 package ru.otus.springexam.dao;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 import ru.otus.springexam.domain.Person;
 
 import java.util.Scanner;
 
+@Service
 public class PersonDaoKeyboard implements PersonDao {
+    @Value("28")
     private int defaultAge;
 
     public void setDefaultAge(String defaultAge) {
