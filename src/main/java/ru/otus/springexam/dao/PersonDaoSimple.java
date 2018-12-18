@@ -1,6 +1,6 @@
-package ru.otus.springTest.dao;
+package ru.otus.springexam.dao;
 
-import ru.otus.springTest.domain.Person;
+import ru.otus.springexam.domain.Person;
 
 public class PersonDaoSimple implements PersonDao {
     public void setDefaultAge(String defaultAge) {

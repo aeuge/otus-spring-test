@@ -1,4 +1,4 @@
-package ru.otus.springTest.domain;
+package ru.otus.springexam.domain;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,6 +11,7 @@ public class Question{
     public Question(Map<String, String> mapOfQuestions) {
         this.mapOfQuestions = mapOfQuestions;
     }
+    public Question() {mapOfQuestions = new HashMap<>();}
 
     public void add (String k, String v) {
         mapOfQuestions.put(k,v);
@@ -19,9 +20,11 @@ public class Question{
     public List<String> keys() {
         return new ArrayList<>(mapOfQuestions.keySet());
     }
+
     public String get (String key) {
         return mapOfQuestions.get(key);
     }
+
     public String toString () {
         return mapOfQuestions.toString();
     }

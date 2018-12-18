@@ -1,4 +1,4 @@
-package ru.otus.springTest.domain;
+package ru.otus.springexam.domain;
 
 public class Person {
 

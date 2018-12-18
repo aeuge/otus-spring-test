@@ -1,11 +1,11 @@
-package ru.otus.springTest;
+package ru.otus.springexam;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import ru.otus.springTest.domain.Person;
-import ru.otus.springTest.domain.Question;
-import ru.otus.springTest.service.ExamService;
-import ru.otus.springTest.service.LoadTestService;
-import ru.otus.springTest.service.PersonService;
+import ru.otus.springexam.domain.Person;
+import ru.otus.springexam.domain.Question;
+import ru.otus.springexam.service.ExamService;
+import ru.otus.springexam.service.LoadTestService;
+import ru.otus.springexam.service.PersonService;
 
 public class Main {
 

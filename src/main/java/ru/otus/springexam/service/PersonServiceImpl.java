@@ -1,7 +1,7 @@
-package ru.otus.springTest.service;
+package ru.otus.springexam.service;
 
-import ru.otus.springTest.dao.PersonDao;
-import ru.otus.springTest.domain.Person;
+import ru.otus.springexam.dao.PersonDao;
+import ru.otus.springexam.domain.Person;
 
 public class PersonServiceImpl implements PersonService {
 

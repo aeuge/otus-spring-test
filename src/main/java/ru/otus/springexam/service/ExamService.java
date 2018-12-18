@@ -1,6 +1,6 @@
-package ru.otus.springTest.service;
+package ru.otus.springexam.service;
 
-import ru.otus.springTest.domain.Question;
+import ru.otus.springexam.domain.Question;
 
 public interface ExamService {
 
