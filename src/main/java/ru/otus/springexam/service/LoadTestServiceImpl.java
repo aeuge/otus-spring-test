@@ -1,7 +1,7 @@
 package ru.otus.springexam.service;
 
+import org.springframework.stereotype.Service;
 import ru.otus.springexam.domain.Question;
-
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -9,11 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class LoadTestServiceImpl implements LoadTestService {
     private final String SEPARATOR = ";";
-
-    public LoadTestServiceImpl() {
-    }
 
     public Question getByPath(String path) {
         URL url = ClassLoader.getSystemResource(path);

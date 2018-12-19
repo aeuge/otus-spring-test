@@ -14,10 +14,10 @@ class PersonServiceImplTest {
     void getByName() {
         try {
             PersonDao personDao = new PersonDaoSimple();
-            PersonService personService = new PersonServiceImpl();
+            PersonService personService = new PersonServiceImpl(personDao);
             ((PersonServiceImpl) personService).setDao(personDao);
             Person person = personService.getByName("Иван");
-            System.out.println("Имя: " + person.getName());
+            System.out.println("Имя: " + person.getName() + " Возраст: " + person.getAge());
         } catch (Exception e) {
             e.printStackTrace();
             Assertions.fail("fail");
