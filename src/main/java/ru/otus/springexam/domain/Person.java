@@ -1,7 +1,5 @@
 package ru.otus.springexam.domain;
 
-import org.springframework.beans.factory.annotation.Value;
-
 public class Person {
 
     private String name;

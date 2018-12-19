@@ -11,13 +11,11 @@ import ru.otus.springexam.domain.Question;
 
 import java.io.ByteArrayInputStream;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 @Configuration
 @PropertySource("classpath:application.properties")
 class ExamServiceImplTest {
-    @Value("${number.questions}")
-    private int numberOfQuestions=5;
+    @Value("1")
+    private int numberOfQuestions=1;
 
     @Test
     void start() {
