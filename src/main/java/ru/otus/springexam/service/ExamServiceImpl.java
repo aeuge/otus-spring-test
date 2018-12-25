@@ -13,8 +13,11 @@ import static ru.otus.springexam.Main.LOCAL;
 
 @Service
 public class ExamServiceImpl implements ExamService {
-    @Autowired
     private MessageSource messageSource;
+
+    public ExamServiceImpl(MessageSource messageSource) {
+        this.messageSource = messageSource;
+    }
 
     public long start(Question question, int numberOfQuestions) {
         int numberOfCorrectAnswers = 0;

@@ -13,8 +13,11 @@ public class PersonDaoKeyboard implements PersonDao {
     @Value("${default.age}")
     private int defaultAge;
 
-    @Autowired
     private MessageSource messageSource;
+
+    public PersonDaoKeyboard(MessageSource messageSource) {
+        this.messageSource = messageSource;
+    }
 
     public void setDefaultAge(String defaultAge) {
         this.defaultAge = Integer.decode(defaultAge);
