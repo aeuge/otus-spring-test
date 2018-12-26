@@ -1,6 +1,5 @@
 package ru.otus.springexam.service;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 import ru.otus.springexam.domain.Question;
 import java.net.URL;

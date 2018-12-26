@@ -13,7 +13,7 @@ public class Question{
     }
     public Question() {mapOfQuestions = new HashMap<>();}
 
-    public void add (String k, String v) {
+    public void add(String k, String v) {
         mapOfQuestions.put(k,v);
     }
 
@@ -21,15 +21,15 @@ public class Question{
         return new ArrayList<>(mapOfQuestions.keySet());
     }
 
-    public String get (String key) {
+    public String get(String key) {
         return mapOfQuestions.get(key);
     }
 
-    public String toString () {
+    public String toString() {
         return mapOfQuestions.toString();
     }
 
-    public Integer getCount () {
+    public Integer getCount() {
         return mapOfQuestions.size();
     }
 }

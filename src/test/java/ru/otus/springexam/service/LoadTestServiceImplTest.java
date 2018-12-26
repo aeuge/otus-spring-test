@@ -1,10 +1,8 @@
 package ru.otus.springexam.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.TestPropertySource;
 import ru.otus.springexam.config.YamlProps;
 import ru.otus.springexam.domain.Question;
@@ -20,9 +18,6 @@ class LoadTestServiceImplTest {
 
     @Autowired
     YamlProps props;
-
-    @MockBean
-    CommandLineRunner commandLineRunner;
 
     @Test
     @DisplayName("успешно закончилась")
