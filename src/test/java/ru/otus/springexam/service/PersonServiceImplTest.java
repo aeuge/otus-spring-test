@@ -1,26 +1,40 @@
 package ru.otus.springexam.service;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import ru.otus.springexam.dao.PersonDao;
-import ru.otus.springexam.dao.PersonDaoSimple;
 import ru.otus.springexam.domain.Person;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.when;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+@SpringBootTest
+@DisplayName("Тестирование DAO пользователя")
 class PersonServiceImplTest {
+    @Autowired
+    PersonService personService;
+
+    @MockBean
+    PersonDao personDao;
+
+    @MockBean
+    CommandLineRunner commandLineRunner;
 
     @Test
+    @DisplayName("успешно пройдено")
     void getByName() {
         try {
-            PersonDao personDao = new PersonDaoSimple();
-            PersonService personService = new PersonServiceImpl(personDao);
-            ((PersonServiceImpl) personService).setDao(personDao);
-            Person person = personService.getByName("Иван");
-            System.out.println("Имя: " + person.getName() + " Возраст: " + person.getAge());
+            Person person = new Person("Аристов Евгений", 10);
+            when(personDao.findByName(anyString())).thenReturn(person);
+
+            Person personReturned = personService.getByName("Иван");
+            Assertions.assertEquals(person,personReturned);
         } catch (Exception e) {
             e.printStackTrace();
-            Assertions.fail("fail");
         }
     }
 }

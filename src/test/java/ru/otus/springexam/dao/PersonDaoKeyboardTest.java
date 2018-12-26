@@ -4,8 +4,10 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.MessageSource;
 import ru.otus.springexam.config.YamlProps;
 import ru.otus.springexam.domain.Person;
@@ -16,7 +18,10 @@ import java.io.ByteArrayInputStream;
 @DisplayName("Ввод данных пользователя с клавиатуры")
 class PersonDaoKeyboardTest {
     @Autowired
-    private MessageSource messageSource;
+    PersonDao pdk;
+
+    @MockBean
+    CommandLineRunner commandLineRunner;
 
     @Autowired
     YamlProps props;
@@ -25,7 +30,6 @@ class PersonDaoKeyboardTest {
     @DisplayName("успешно пройдет")
     void findByName() {
         try {
-            PersonDao pdk = new PersonDaoKeyboard(messageSource,props);
             ByteArrayInputStream in = new ByteArrayInputStream("Аристов\nЕвгений\n".getBytes());
             System.setIn(in);
             Person person = pdk.findByName("");

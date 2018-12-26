@@ -28,4 +28,8 @@ public class Question{
     public String toString () {
         return mapOfQuestions.toString();
     }
+
+    public Integer getCount () {
+        return mapOfQuestions.size();
+    }
 }
