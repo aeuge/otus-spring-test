@@ -1,17 +1,18 @@
-package ru.otus.springexam;
+package ru.otus.springexam.service;
 
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
-import org.springframework.stereotype.Service;
+import ru.otus.springexam.config.YamlProps;
 
 @Configuration
-public class Config {
+public class MessageSourse {
+
     @Bean
-    public MessageSource messageSource() {
+    public MessageSource messageSource(YamlProps props) {
         ReloadableResourceBundleMessageSource ms = new ReloadableResourceBundleMessageSource();
-        ms.setBasename("/i18n/bundle");
+        ms.setBasename(props.getBundlebase());
         ms.setDefaultEncoding("UTF-8");
         return ms;
     }

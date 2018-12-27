@@ -1,20 +1,37 @@
 package ru.otus.springexam.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.TestPropertySource;
+import ru.otus.springexam.config.YamlProps;
 import ru.otus.springexam.domain.Question;
 import org.junit.jupiter.api.*;
-import ru.otus.springexam.service.LoadTestServiceImpl;
 
+@SpringBootTest
+@EnableConfigurationProperties(YamlProps.class)
+@TestPropertySource(locations= "classpath:application.yml")
+@DisplayName("Загрузка данных из файла")
 class LoadTestServiceImplTest {
+    @Autowired
+    LoadTestServiceImpl loadTestService;
+
+    @Autowired
+    YamlProps props;
+
+    @MockBean
+    CommandLineRunner commandLineRunner;
 
     @Test
+    @DisplayName("успешно закончилась")
     void getByPath() {
         try {
-            LoadTestServiceImpl loadTestService = new LoadTestServiceImpl();
-            Question question = loadTestService.getByPath("quest.csv");
-            System.out.println(question);
+            Question question = loadTestService.getByPath(props.getFilename());
+            Assertions.assertEquals(question.getCount(),(Integer) 6);
         } catch (Exception e) {
             e.printStackTrace();
-            Assertions.fail("fail");
         }
     }
 }

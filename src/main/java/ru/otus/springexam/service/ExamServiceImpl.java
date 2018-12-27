@@ -1,6 +1,5 @@
 package ru.otus.springexam.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Service;
 import ru.otus.springexam.domain.Question;
@@ -8,13 +7,15 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
-
-import static ru.otus.springexam.Main.LOCAL;
+import static ru.otus.springexam.service.MainExamImpl.LOCAL;
 
 @Service
 public class ExamServiceImpl implements ExamService {
-    @Autowired
     private MessageSource messageSource;
+
+    public ExamServiceImpl(MessageSource messageSource) {
+        this.messageSource = messageSource;
+    }
 
     public long start(Question question, int numberOfQuestions) {
         int numberOfCorrectAnswers = 0;
