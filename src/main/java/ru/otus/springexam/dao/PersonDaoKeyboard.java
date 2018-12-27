@@ -7,7 +7,7 @@ import ru.otus.springexam.domain.Person;
 import java.util.Scanner;
 import static ru.otus.springexam.service.MainExamImpl.LOCAL;
 
-@Service
+
 public class PersonDaoKeyboard implements PersonDao {
     private int defaultAge;
 

@@ -21,9 +21,6 @@ class PersonServiceImplTest {
     @MockBean
     PersonDao personDao;
 
-    @MockBean
-    CommandLineRunner commandLineRunner;
-
     @Test
     @DisplayName("успешно пройдено")
     void getByName() {
